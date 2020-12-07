@@ -7,11 +7,13 @@ users:
   - julia
   - camoy
   - pdonatbo
+  - peta
     
 admin:
   - aviral
   - krikava
   - pdonatbo
+  - peta
 
 host_packages:
   - sqlite3
