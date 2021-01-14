@@ -35,4 +35,9 @@
     - docker
     - r-base
     - scala
-    
+
+- hosts: mattermost
+  remote_user: root
+  roles:
+    - docker
+    - mattermost

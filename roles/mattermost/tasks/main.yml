@@ -1,0 +1,89 @@
+- apt:
+    update_cache: yes
+    state: present
+    name:
+      - python-docker
+      - docker-compose
+
+# Create a random PW for the db
+- ansible.builtin.file:
+    state: directory
+    recurse: yes
+    path: /etc/ansible/facts.d
+- shell:
+    creates: /etc/ansible/facts.d/mattermost.fact
+    cmd: |
+      echo -n "[db]\npw=$(openssl rand -base64 16)\n" > /etc/ansible/facts.d/mattermost.fact
+- ansible.builtin.setup:
+    filter: ansible_local
+
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/app/mattermost/{{item}}
+    state: directory
+    mode: '0700'
+    owner: 2000
+    group: 2000
+  loop:
+    - data
+    - logs
+    - config
+    - plugins
+    - client-plugins
+
+- name: Get sources
+  git:
+    repo: https://github.com/mattermost/mattermost-docker.git
+    dest: /opt/mattermost-docker
+    force: yes
+    version: "5.29.1"
+- name: setup compose.yml
+  copy:
+    content: |
+      version: "2"
+      services:
+        db:
+          build: db
+          read_only: true
+          restart: unless-stopped
+          volumes:
+            - /opt/volumes/db/var/lib/postgresql/data:/var/lib/postgresql/data
+            - /etc/localtime:/etc/localtime:ro
+          environment:
+            - POSTGRES_USER=mmuser
+            - POSTGRES_PASSWORD={{ ansible_local['mattermost']['db']['pw'] }}
+            - POSTGRES_DB=mattermost
+        app:
+          build:
+            context: app
+            args:
+              - edition=team
+          restart: unless-stopped
+          volumes:
+            - /opt/volumes/app/mattermost/config:/mattermost/config:rw
+            - /opt/volumes/app/mattermost/data:/mattermost/data:rw
+            - /opt/volumes/app/mattermost/logs:/mattermost/logs:rw
+            - /opt/volumes/app/mattermost/plugins:/mattermost/plugins:rw
+            - /opt/volumes/app/mattermost/client-plugins:/mattermost/client/plugins:rw
+            - /etc/localtime:/etc/localtime:ro
+          environment:
+            - MM_USERNAME=mmuser
+            - MM_PASSWORD={{ ansible_local['mattermost']['db']['pw'] }}
+            - MM_DBNAME=mattermost
+        web:
+          build: web
+          ports:
+            - "80:80"
+            - "443:443"
+          read_only: true
+          restart: unless-stopped
+          volumes:
+            - /etc/localtime:/etc/localtime:ro
+    dest: /opt/mattermost-docker/docker-compose.yml
+
+- name: Docker Compose Mattermost
+  community.general.docker_compose:
+    pull: true
+    project_name: mattermost
+    project_src: /opt/mattermost-docker
+  register: output
