@@ -17,6 +17,10 @@
 - ansible.builtin.setup:
     filter: ansible_local
 
+- sysctl:
+    name: vm.max_map_count
+    value: '262144'
+    state: present
 - name: Create volume directory if it does not exist
   ansible.builtin.file:
     path: /opt/volumes/app/mattermost/{{item}}
@@ -30,7 +34,6 @@
     - config
     - plugins
     - client-plugins
-
 - name: Get sources
   git:
     repo: https://github.com/mattermost/mattermost-docker.git
@@ -87,3 +90,17 @@
     project_name: mattermost
     project_src: /opt/mattermost-docker
   register: output
+
+- ansible.builtin.lineinfile:
+    path: /opt/volumes/app/mattermost/config/config.json
+    regexp: '"SiteURL": .*,'
+    line: '"SiteURL": "https://parley.prl.fit.cvut.cz",'
+- ansible.builtin.lineinfile:
+    path: /opt/volumes/app/mattermost/config/config.json
+    regexp: '"VaryByHeader": .*'
+    line: '"VaryByHeader": "X-Forwarded-For"'
+- ansible.builtin.lineinfile:
+    path: /opt/volumes/app/mattermost/config/config.json
+    insertafter: 'ServiceSettings'
+    regexp: '"TrustedProxyIPHeader": .*,'
+    line: '"TrustedProxyIPHeader": ["X-Forwarded-For"],'
