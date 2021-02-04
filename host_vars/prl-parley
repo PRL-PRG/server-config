@@ -5,3 +5,6 @@ admin:
 root_login:
   - oli
   - peta
+firewall:
+  policy: deny
+  rules: []

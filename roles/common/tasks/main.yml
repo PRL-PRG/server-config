@@ -115,3 +115,26 @@
     remove: yes
   with_items:
     - "{{ all_users | difference( all_users | selectattr('username', 'in', users) | list ) }}"
+
+- name: Firewall, policy
+  when: firewall is defined
+  community.general.ufw:
+    state: enabled
+    policy: '{{ firewall.policy }}'
+
+- name: Firewall, ensure we are not getting locked out
+  when: firewall is defined
+  community.general.ufw:
+    rule: allow
+    proto: tcp
+    port: 22
+    src: "{{ hostvars['prl-gateway']['ansible_host'] }}"
+
+- name: Firewall, open tcp ports
+  when: (firewall is defined) and (firewall.rules is defined)
+  community.general.ufw:
+    rule: "{{ item.rule | default('allow', true) }}"
+    port: "{{ item.port }}"
+    proto: "{{ item.proto }}"
+    delete: "{{ item.delete | default('no', true) }}"
+  loop: '{{ firewall.rules | default([], true) }}'
