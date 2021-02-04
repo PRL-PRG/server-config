@@ -103,7 +103,7 @@
 # needed to connect the traefik container to the mattermost network
 - name: connect traefik
   community.general.docker_network:
-    name: mattermost-out
+    name: mattermost_mattermost-out
     connected:
       - traefik
     appends: yes
