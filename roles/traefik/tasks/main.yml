@@ -23,6 +23,7 @@
     name: traefik
     image: traefik
     restart_policy: unless-stopped
+    pull: true
     recreate: true
     ports:
       - "80:80"
