@@ -40,5 +40,5 @@
   remote_user: root
   roles:
     - docker
+    - traefik
     - mattermost
-
