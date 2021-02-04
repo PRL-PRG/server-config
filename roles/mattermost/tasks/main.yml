@@ -100,6 +100,14 @@
     project_src: /opt/mattermost-docker
   register: output
 
+# needed to connect the traefik container to the mattermost network
+- name: connect traefik
+  community.general.docker_network:
+    name: mattermost-out
+    connected:
+      - traefik
+    appends: yes
+
 - ansible.builtin.lineinfile:
     path: /opt/volumes/app/mattermost/config/config.json
     regexp: '"SiteURL": .*,'
