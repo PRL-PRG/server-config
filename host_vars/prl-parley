@@ -8,3 +8,4 @@ root_login:
 firewall:
   policy: deny
   rules: []
+ansible_python_interpreter: auto

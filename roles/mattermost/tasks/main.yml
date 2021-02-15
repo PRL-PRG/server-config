@@ -2,7 +2,7 @@
     update_cache: yes
     state: present
     name:
-      - python-docker
+      - python3-docker
       - docker-compose
 
 # Create a random PW for the db
