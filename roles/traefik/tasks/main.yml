@@ -18,18 +18,32 @@
     dest: "{{ traefik_dir }}/traefik.yml"
     mode: 0600
 
-- name: Create the traefik container
-  docker_container:
+- name: traefik netowrk
+  community.general.docker_network:
     name: traefik
-    image: traefik:v2.4
-    restart_policy: unless-stopped
+
+- name: Create the traefik container
+  community.general.docker_compose:
+    project_name: traefik
     pull: true
-    recreate: true
-    ports:
-      - "80:80"
-      - "443:443"
-      - "127.0.0.1:8080:8080"
-    volumes:
-      - "{{ traefik_dir }}/traefik.yml:/etc/traefik/traefik.yml"
-      - "{{ traefik_dir }}/acme.json:/acme.json"
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+    definition:
+      version: '3.3'
+      networks:
+        traefik:
+          external:
+            name: traefik
+      services:
+        traefik:
+          networks:
+            - traefik
+          container_name: traefik
+          restart: unless-stopped
+          image: traefik:v2.4
+          ports:
+            - "80:80"
+            - "443:443"
+            - "127.0.0.1:8080:8080"
+          volumes:
+            - "{{ traefik_dir }}/traefik.yml:/etc/traefik/traefik.yml"
+            - "{{ traefik_dir }}/acme.json:/acme.json"
+            - /var/run/docker.sock:/var/run/docker.sock:ro

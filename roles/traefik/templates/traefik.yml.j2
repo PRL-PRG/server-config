@@ -12,16 +12,25 @@ api:
 entryPoints:
   web:
     address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
   websecure:
     address: :443
     http:
       tls: {}
-# certificatesResolvers:
-#   le:
-#     acme:
-#       email: "{{ acme_email }}"
-#       storage: acme.json
+
+certificatesResolvers:
+  le:
+    acme:
+      email: "{{ acme_email }}"
+      storage: acme.json
+      httpChallenge:
+        entryPoint: web
 
 providers:
   docker:
     exposedByDefault: false
+    network: traefik

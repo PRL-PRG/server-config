@@ -1,6 +1,6 @@
 [all]
 prl-gateway               ansible_host=10.38.5.81
-prl-parley                ansible_host=10.38.5.154
+prl-parley                ansible_host=147.32.233.57
 prl-web                   ansible_host=10.38.5.129
 rir-benchmarks            ansible_host=10.200.14.207
 rir-benchmarks-web        ansible_host=10.38.5.94

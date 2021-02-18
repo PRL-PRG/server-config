@@ -39,7 +39,7 @@
     repo: https://github.com/mattermost/mattermost-docker.git
     dest: /opt/mattermost-docker
     force: yes
-    version: "5.30.2"
+    version: "v5.31.1"
 
 - name: setup compose.yml
   copy:
@@ -48,8 +48,9 @@
       networks:
         mattermost-internal:
           internal: true
-        mattermost-out:
-          internal: false
+        traefik:
+          external:
+            name: traefik
       services:
         db:
           networks:
@@ -67,7 +68,7 @@
             - POSTGRES_DB=mattermost
         app:
           networks:
-            - mattermost-out
+            - traefik
             - mattermost-internal
           container_name: 'mattermost-app'
           build:
@@ -88,36 +89,37 @@
             - MM_DBNAME=mattermost
           labels:
             - "traefik.enable=true"
-            - "traefik.docker.network=mattermost_mattermost-out"
-            - "traefik.http.routers.mattermost-app.rule=Host(`parley.prl.fit.cvut.cz`)"
-            - "traefik.http.routers.mattermost-app.entrypoints=web"
+            - "traefik.docker.network=traefik"
+            - "traefik.http.routers.mattermost-app.rule=Host(`{{ mattermost_url }}`)"
+            - "traefik.http.routers.mattermost-app.tls=true"
+            - "traefik.http.routers.mattermost-app.tls.certresolver=le"
     dest: /opt/mattermost-docker/docker-compose.yml
 
 - name: Docker Compose Mattermost
   community.general.docker_compose:
     pull: true
+    build: true
     project_name: mattermost
     project_src: /opt/mattermost-docker
   register: output
 
-# needed to connect the traefik container to the mattermost network
-- name: connect traefik
-  community.general.docker_network:
-    name: mattermost_mattermost-out
-    connected:
-      - traefik
-    appends: yes
-
+- name: container ready
+  stat:
+    path: /opt/volumes/app/mattermost/config/config.json
+  register: mattermost_config_ready
 - ansible.builtin.lineinfile:
     path: /opt/volumes/app/mattermost/config/config.json
     regexp: '"SiteURL": .*,'
-    line: '"SiteURL": "https://parley.prl.fit.cvut.cz",'
+    line: '"SiteURL": "https://{{ mattermost_url }}",'
+  when: mattermost_config_ready.stat.exists == True
 - ansible.builtin.lineinfile:
     path: /opt/volumes/app/mattermost/config/config.json
     regexp: '"VaryByHeader": .*'
     line: '"VaryByHeader": "X-Forwarded-For"'
+  when: mattermost_config_ready.stat.exists == True
 - ansible.builtin.lineinfile:
     path: /opt/volumes/app/mattermost/config/config.json
     insertafter: 'ServiceSettings'
     regexp: '"TrustedProxyIPHeader": .*,'
     line: '"TrustedProxyIPHeader": ["X-Forwarded-For"],'
+  when: mattermost_config_ready.stat.exists == True
