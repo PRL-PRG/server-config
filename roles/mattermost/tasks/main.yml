@@ -123,3 +123,24 @@
     regexp: '"TrustedProxyIPHeader": .*,'
     line: '"TrustedProxyIPHeader": ["X-Forwarded-For"],'
   when: mattermost_config_ready.stat.exists == True
+
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/app/matterbridge
+    state: directory
+    mode: '0700'
+    owner: 3300
+    group: 3300
+
+- name: Matterbridge
+  community.general.docker_container:
+    pull: true
+    name: matterbridge
+    image: 42wim/matterbridge
+    user: "3300:3300"
+    restart: true
+    network_mode: host
+    container_default_behavior: no_defaults
+    volumes:
+      - /opt/volumes/matterbridge:/etc/matterbridge
+
