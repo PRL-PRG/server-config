@@ -9,4 +9,5 @@ firewall:
   policy: deny
   rules: []
 mattermost_url: mm.r-vm.net
+grafana_url: stats.r-vm.net
 ansible_python_interpreter: auto

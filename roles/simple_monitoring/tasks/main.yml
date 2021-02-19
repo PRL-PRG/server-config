@@ -1,0 +1,115 @@
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/app/prometheus/{{item}}
+    state: directory
+    mode: '0700'
+    owner: 3301
+    group: 3301
+  loop:
+    - data
+    - config
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/app/grafana/{{item}}
+    state: directory
+    mode: '0700'
+    owner: 3302
+    group: 3302
+  loop:
+    - data
+
+- name: setup prometheus config
+  copy:
+    content: |
+      # my global config
+      global:
+        scrape_interval:     120s # By default, scrape targets every 15 seconds.
+        evaluation_interval: 120s # By default, scrape targets every 15 seconds.
+        external_labels:
+            monitor: 'my-project'
+      rule_files: []
+      scrape_configs:
+        - job_name: 'prometheus'
+          scrape_interval: 120s
+          static_configs:
+            - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100']
+    dest: /opt/volumes/app/prometheus/config/prometheus.yml
+    mode: '0744'
+    owner: root
+    group: root
+
+- name: Monitoring dashboard
+  community.general.docker_compose:
+    pull: true
+    project_name: monitoring
+    definition:
+      version: '3.3'
+      networks:
+        monitoring-internal:
+          internal: true
+        traefik:
+          external:
+            name: traefik
+      services:
+        prometheus:
+          image: prom/prometheus:latest
+          container_name: monitoring_prometheus
+          user: "3301:3301"
+          restart: unless-stopped
+          volumes:
+            - /opt/volumes/app/prometheus/config:/etc/prometheus/
+            - /opt/volumes/app/prometheus/data:/prometheus
+          command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--storage.tsdb.path=/prometheus'
+          ports:
+            - 9090:9090
+          networks:
+            - monitoring-internal
+        node-exporter:
+          image: quay.io/prometheus/node-exporter:latest
+          container_name: monitoring_node_exporter
+          restart: unless-stopped
+          volumes:
+            - '/:/host:ro,rslave'
+          command:
+            - '--path.rootfs=/host'
+          ports:
+            - 9100:9100
+          networks:
+            - monitoring-internal
+        cadvisor:
+          image: google/cadvisor:latest
+          container_name: monitoring_cadvisor
+          restart: unless-stopped
+          volumes:
+            - /:/rootfs:ro
+            - /var/run:/var/run:rw
+            - /sys:/sys:ro
+            - /var/lib/docker/:/var/lib/docker:ro
+            - /dev/disk/:/dev/disk:ro
+          devices:
+            - /dev/kmsg
+          ports:
+            - 8080:8080
+          networks:
+            - monitoring-internal
+        grafana:
+          image: grafana/grafana:latest
+          container_name: monitoring_grafana
+          restart: unless-stopped
+          user: "3302:3302"
+          networks:
+            - traefik
+            - monitoring-internal
+          volumes:
+            - /opt/volumes/app/grafana/data:/var/lib/grafana
+          environment:
+            - GF_USERS_ALLOW_SIGN_UP=false
+          labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik"
+            - "traefik.http.routers.grafana.rule=Host(`{{ grafana_url }}`)"
+            - "traefik.http.routers.grafana.tls=true"
+            - "traefik.http.routers.grafana.tls.certresolver=le"
+  register: output

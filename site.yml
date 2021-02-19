@@ -46,3 +46,4 @@
     - traefik
     - mattermost
     - watchtower
+    - simple_monitoring
