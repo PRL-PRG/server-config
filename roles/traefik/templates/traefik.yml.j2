@@ -21,6 +21,8 @@ entryPoints:
     address: :443
     http:
       tls: {}
+  metrics:
+    address: :9090
 
 certificatesResolvers:
   le:
@@ -34,3 +36,9 @@ providers:
   docker:
     exposedByDefault: false
     network: traefik
+
+metrics:
+  prometheus:
+    addEntryPointsLabels: true
+    addServicesLabels: true
+    entryPoint: metrics

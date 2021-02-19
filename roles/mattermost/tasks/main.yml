@@ -128,7 +128,7 @@
   ansible.builtin.file:
     path: /opt/volumes/matterbridge
     state: directory
-    mode: '0440'
+    mode: '0550'
     owner: 3300
     group: 3300
 
