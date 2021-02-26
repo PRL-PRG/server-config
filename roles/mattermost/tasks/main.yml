@@ -132,6 +132,14 @@
     owner: 3300
     group: 3300
 
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/matterbridge/media
+    state: directory
+    mode: '0750'
+    owner: 3300
+    group: 101
+
 - name: Ensures empty config exists
   file:
     path: "/opt/volumes/matterbridge/matterbridge.toml"
@@ -150,5 +158,32 @@
     network_mode: host
     container_default_behavior: no_defaults
     volumes:
-      - /opt/volumes/matterbridge:/etc/matterbridge
+      - /opt/volumes/matterbridge/matterbridge.toml:/etc/matterbridge/matterbridge.toml
+      - /opt/volumes/matterbridge/media:/var/www/matterbridge
 
+- name: Serve matterbridge media files
+  community.general.docker_compose:
+    pull: true
+    project_name: matterbridge-media
+    definition:
+      version: '3.3'
+      networks:
+        traefik:
+          external:
+            name: traefik
+      services:
+        media:
+          image: nginx:latest
+          container_name: media-serve
+          restart: unless-stopped
+          networks:
+            - traefik
+          volumes:
+            - /opt/volumes/matterbridge/media:/usr/share/nginx/html:ro
+          labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik"
+            - "traefik.http.routers.matterbridge-media.rule=Host(`{{ matterbridge_url }}`)"
+            - "traefik.http.routers.matterbridge-media.tls=true"
+            - "traefik.http.routers.matterbridge-media.tls.certresolver=le"
+  register: output
