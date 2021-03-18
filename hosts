@@ -6,6 +6,7 @@ rir-benchmarks            ansible_host=10.200.14.203
 rir-benchmarks-web        ansible_host=10.38.5.94
 rir-gitlab-runner         ansible_host=10.38.5.93
 rir-gitlab-runner-2       ansible_host=10.38.5.127
+rir-gitlab-runner-3       ansible_host=10.38.6.9
 prl-julia                 ansible_host=10.38.5.109
 prl-dcd                   ansible_host=10.38.5.1
 dejavuii-test             ansible_host=10.38.5.64
@@ -47,11 +48,13 @@ rir-benchmarks-web
 rir-benchmarks
 rir-gitlab-runner
 rir-gitlab-runner-2
+rir-gitlab-runner-3
 prl5
 
 [gitlab_runners]
 rir-gitlab-runner
 rir-gitlab-runner-2
+rir-gitlab-runner-3
 rir-benchmarks
 prl5
 

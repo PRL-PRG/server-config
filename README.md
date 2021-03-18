@@ -84,6 +84,7 @@ Feel free to add more complex tasks as well (such as new roles for your servers,
     sudo apt-add-repository ppa:ansible/ansible
     sudo apt update
     sudo apt install ansible
+    ansible-galaxy collection install community.general    
 
 To run ansible, run the following:
 
