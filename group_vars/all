@@ -198,6 +198,10 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDaV5psdRHeF7KrvTrTXXmdC4jUgyh91lmgGc9fSTan
     in_docker: yes
     in_scala: yes
 
+  - username: vogier
+    name: Valentin Ogier
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDR1QiO5UuAPkfVDNSq6n9SBcsi7bX4QOhl+6j7kQ8FMD/e4S4RhVgmytnz3SmerKaqrH4iA5Nze0uuazk1ujUb5opjWTRj7HipAGO8TdtQShRsxxiMg4WkyUWzQS6Hs30a2aH4vtzJ9BPcnxn7TkH2y8CZVRe0kyaZ4+nxa9hlzDN9PMUPoD7Zl6B2CwMjnnvqkdA5DxN1flfY8ayQEOf9J9Z2VMkd399Usr2kjePrf+We6a25XVIu17scs9n6Fh8XK2zWPD0nlK5vRDVcx+OiuHoA+vNooMxEPyMai8llfVjOoa3H8xpziIwW6V5ummNbDeCaP0tsQVm+8YVthCo/5pP4ws+4uqbHmX+4ElX+zSYUboK6n1/GMLayTOmHyjZCPUz730DFsvZx3s1TdBK+wnPBk7XZWbVhmfwW8gJShb8hPSkEsFpYBf4xYBcj9vSUv4WX8qMHVOfEO3k+Osb/lZkMG8mOTEq5OsSzEAYvpEE2JXkEGMKr/NO6cLtINKbzqFp8IHI1D+EPj9Dw2ygErbiEwatRUS8AWfwC5vhR0gYJcqVczogacX0/tn/GDwfjdtyUCEM7gwos+JfrcFiB8vym3RPBPqlbrOATsC7UX3tM1BeJ4zR7IXiS1Jea+OOgyKbCsT1lIkS0lmjMJPIYmZ5qeaVou7hIi3UvPcajzw== contact@vogier.fr"
+
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
   - username: hshabbir
