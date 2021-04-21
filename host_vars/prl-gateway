@@ -6,6 +6,7 @@ users:
   - julia
   - mhyee
   - aviral
+  - alexi
   - oli
   - charig
   - kovalenko_alex
@@ -19,6 +20,9 @@ users:
   - skrynski
   - krikava
   - pdonatbo
+  - jack
+  - asmar
+  - ryanguo99
   
 remove_invalid_users: true
 

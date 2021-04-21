@@ -1,17 +1,23 @@
 [all]
 prl-gateway               ansible_host=10.38.5.81
+prl-parley                ansible_host=147.32.233.57
 prl-web                   ansible_host=10.38.5.129
-rir-benchmarks            ansible_host=10.200.14.208
+rir-benchmarks            ansible_host=10.200.14.203
 rir-benchmarks-web        ansible_host=10.38.5.94
 rir-gitlab-runner         ansible_host=10.38.5.93
 rir-gitlab-runner-2       ansible_host=10.38.5.127
+rir-gitlab-runner-3       ansible_host=10.38.6.9
 prl-julia                 ansible_host=10.38.5.109
+prl-dcd                   ansible_host=10.38.5.1
 dejavuii-test             ansible_host=10.38.5.64
 prl-dejavuii              ansible_host=10.38.5.108
 bigcode-gpu02             ansible_host=10.200.14.143
 prl5                      ansible_host=10.200.14.25
 prl3                      ansible_host=10.200.14.53
 prl4                      ansible_host=10.200.14.54
+prl-parasite              ansible_host=10.38.6.134
+prl-aviral                ansible_host=10.38.6.133
+prl-hyeyoung              ansible_host=10.38.6.195
 
 # these are disabled yet until all their configuration is done
 prl2                      ansible_host=10.200.14.52
@@ -25,6 +31,7 @@ prl-gateway
 prl-dejavuii
 dejavuii-test
 prl1e
+prl-dcd
 
 [metal]
 prl3
@@ -44,11 +51,13 @@ rir-benchmarks-web
 rir-benchmarks
 rir-gitlab-runner
 rir-gitlab-runner-2
+rir-gitlab-runner-3
 prl5
 
 [gitlab_runners]
 rir-gitlab-runner
 rir-gitlab-runner-2
+rir-gitlab-runner-3
 rir-benchmarks
 prl5
 
@@ -58,3 +67,7 @@ prl1e
 prl2
 prl3
 prl4
+prl-dejavuii
+
+[communications]
+prl-parley

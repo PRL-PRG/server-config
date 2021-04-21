@@ -35,4 +35,15 @@
     - docker
     - r-base
     - scala
-    
+
+#- hosts: communications
+#  remote_user: root
+#  vars:
+#    traefik_dir: /var/www/traefik
+#    acme_email: acme_prl@o1o.ch
+#  roles:
+#    - docker
+#    - traefik
+#    - mattermost
+#    - watchtower
+#    - simple_monitoring

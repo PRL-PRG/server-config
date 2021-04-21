@@ -1,0 +1,189 @@
+- apt:
+    update_cache: yes
+    state: present
+    name:
+      - python3-docker
+      - docker-compose
+
+# Create a random PW for the db
+- ansible.builtin.file:
+    state: directory
+    recurse: yes
+    path: /etc/ansible/facts.d
+- shell:
+    creates: /etc/ansible/facts.d/mattermost.fact
+    cmd: |
+      echo -n "[db]\npw=$(openssl rand -base64 16)\n" > /etc/ansible/facts.d/mattermost.fact
+- ansible.builtin.setup:
+    filter: ansible_local
+
+- sysctl:
+    name: vm.max_map_count
+    value: '262144'
+    state: present
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/app/mattermost/{{item}}
+    state: directory
+    mode: '0700'
+    owner: 2000
+    group: 2000
+  loop:
+    - data
+    - logs
+    - config
+    - plugins
+    - client-plugins
+- name: Get sources
+  git:
+    repo: https://github.com/mattermost/mattermost-docker.git
+    dest: /opt/mattermost-docker
+    force: yes
+    version: "v5.31.1"
+
+- name: setup compose.yml
+  copy:
+    content: |
+      version: '3.3'
+      networks:
+        mattermost-internal:
+          internal: true
+        traefik:
+          external:
+            name: traefik
+      services:
+        db:
+          networks:
+            - mattermost-internal
+          build: db
+          container_name: 'mattermost-db'
+          read_only: true
+          restart: unless-stopped
+          volumes:
+            - /opt/volumes/db/var/lib/postgresql/data:/var/lib/postgresql/data
+            - /etc/localtime:/etc/localtime:ro
+          environment:
+            - POSTGRES_USER=mmuser
+            - POSTGRES_PASSWORD={{ ansible_local['mattermost']['db']['pw'] }}
+            - POSTGRES_DB=mattermost
+        app:
+          networks:
+            - traefik
+            - mattermost-internal
+          container_name: 'mattermost-app'
+          build:
+            context: app
+            args:
+              - edition=team
+          restart: unless-stopped
+          volumes:
+            - /opt/volumes/app/mattermost/config:/mattermost/config:rw
+            - /opt/volumes/app/mattermost/data:/mattermost/data:rw
+            - /opt/volumes/app/mattermost/logs:/mattermost/logs:rw
+            - /opt/volumes/app/mattermost/plugins:/mattermost/plugins:rw
+            - /opt/volumes/app/mattermost/client-plugins:/mattermost/client/plugins:rw
+            - /etc/localtime:/etc/localtime:ro
+          environment:
+            - MM_USERNAME=mmuser
+            - MM_PASSWORD={{ ansible_local['mattermost']['db']['pw'] }}
+            - MM_DBNAME=mattermost
+          labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik"
+            - "traefik.http.routers.mattermost-app.rule=Host(`{{ mattermost_url }}`)"
+            - "traefik.http.routers.mattermost-app.tls=true"
+            - "traefik.http.routers.mattermost-app.tls.certresolver=le"
+    dest: /opt/mattermost-docker/docker-compose.yml
+
+- name: Docker Compose Mattermost
+  community.general.docker_compose:
+    pull: true
+    build: true
+    project_name: mattermost
+    project_src: /opt/mattermost-docker
+  register: output
+
+- name: container ready
+  stat:
+    path: /opt/volumes/app/mattermost/config/config.json
+  register: mattermost_config_ready
+- ansible.builtin.lineinfile:
+    path: /opt/volumes/app/mattermost/config/config.json
+    regexp: '"SiteURL": .*,'
+    line: '"SiteURL": "https://{{ mattermost_url }}",'
+  when: mattermost_config_ready.stat.exists == True
+- ansible.builtin.lineinfile:
+    path: /opt/volumes/app/mattermost/config/config.json
+    regexp: '"VaryByHeader": .*'
+    line: '"VaryByHeader": "X-Forwarded-For"'
+  when: mattermost_config_ready.stat.exists == True
+- ansible.builtin.lineinfile:
+    path: /opt/volumes/app/mattermost/config/config.json
+    insertafter: 'ServiceSettings'
+    regexp: '"TrustedProxyIPHeader": .*,'
+    line: '"TrustedProxyIPHeader": ["X-Forwarded-For"],'
+  when: mattermost_config_ready.stat.exists == True
+
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/matterbridge
+    state: directory
+    mode: '0550'
+    owner: 3300
+    group: 3300
+
+- name: Create volume directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/volumes/matterbridge/media
+    state: directory
+    mode: '0750'
+    owner: 3300
+    group: 101
+
+- name: Ensures empty config exists
+  file:
+    path: "/opt/volumes/matterbridge/matterbridge.toml"
+    state: touch
+    mode: 0640
+    owner: root
+    group: 3300
+
+- name: Matterbridge
+  community.general.docker_container:
+    pull: true
+    name: matterbridge
+    image: 42wim/matterbridge
+    user: "3300:3300"
+    restart: true
+    network_mode: host
+    container_default_behavior: no_defaults
+    volumes:
+      - /opt/volumes/matterbridge/matterbridge.toml:/etc/matterbridge/matterbridge.toml
+      - /opt/volumes/matterbridge/media:/var/www/matterbridge
+
+- name: Serve matterbridge media files
+  community.general.docker_compose:
+    pull: true
+    project_name: matterbridge-media
+    definition:
+      version: '3.3'
+      networks:
+        traefik:
+          external:
+            name: traefik
+      services:
+        media:
+          image: nginx:latest
+          container_name: media-serve
+          restart: unless-stopped
+          networks:
+            - traefik
+          volumes:
+            - /opt/volumes/matterbridge/media:/usr/share/nginx/html:ro
+          labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik"
+            - "traefik.http.routers.matterbridge-media.rule=Host(`{{ matterbridge_url }}`)"
+            - "traefik.http.routers.matterbridge-media.tls=true"
+            - "traefik.http.routers.matterbridge-media.tls.certresolver=le"
+  register: output

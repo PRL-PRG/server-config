@@ -1,0 +1,14 @@
+users:
+  - oli
+admin:
+  - oli
+root_login:
+  - oli
+  - peta
+firewall:
+  policy: deny
+  rules: []
+mattermost_url: mm.r-vm.net
+grafana_url: stats.r-vm.net
+matterbridge_url: media.r-vm.net
+ansible_python_interpreter: auto
