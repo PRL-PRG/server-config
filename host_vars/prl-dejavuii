@@ -4,6 +4,7 @@ users:
   - jan
   - kovalenko_alex
   - asmar
+  - smml1996
 admin:
   - peta
 host_packages:

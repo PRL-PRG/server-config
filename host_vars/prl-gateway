@@ -23,6 +23,7 @@ users:
   - jack
   - asmar
   - ryanguo99
+  - smml1996
   
 remove_invalid_users: true
 
