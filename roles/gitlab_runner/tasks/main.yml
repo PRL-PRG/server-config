@@ -1,6 +1,6 @@
 - name: gitlab runner repo
   apt_repository:
-    repo: "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ bionic main"
+    repo: "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ {{ ansible_distribution_release}} main"
     update_cache: no
     state: present
 - apt_key:
