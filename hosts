@@ -17,6 +17,7 @@ prl4                      ansible_host=10.200.14.54
 prl-parasite              ansible_host=10.38.6.134
 prl-aviral                ansible_host=10.38.6.133
 prl-hyeyoung              ansible_host=10.38.6.195
+prl-gpu                   ansible_host=10.38.6.6
 
 # these are disabled yet until all their configuration is done
 prl2                      ansible_host=10.200.14.52
@@ -67,3 +68,4 @@ prl2
 prl3
 prl4
 prl-dejavuii
+prl-dcd
