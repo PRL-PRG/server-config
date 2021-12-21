@@ -14,6 +14,7 @@ admin:
   - krikava
   - pdonatbo
   - peta
+  - alexi
 
 host_packages:
   - sqlite3
