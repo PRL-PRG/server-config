@@ -2,6 +2,7 @@ users:
   - jecmejan
   - skrynski
   - mhyee
+  - hugo
 root_login:
   - oli
   - peta
