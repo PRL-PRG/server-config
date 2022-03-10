@@ -4,6 +4,7 @@
     update_cache: no
     state: present
 - apt_key:
+    tag: apt-key
     url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
     state: present
 - apt:
