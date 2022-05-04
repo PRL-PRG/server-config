@@ -3,5 +3,6 @@ users:
 admin:
   - oli
 root_login:
+  - skrynski
   - oli
   - peta
