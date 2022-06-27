@@ -24,6 +24,8 @@ users:
   - asmar
   - ryanguo99
   - smml1996
+  - jan
+  - jecmejan
   
 remove_invalid_users: true
 
