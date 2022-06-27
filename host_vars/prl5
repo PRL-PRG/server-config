@@ -1,7 +1,12 @@
 users:
   - jecmejan
-  - ryanguo99
-  - vogier
+  - skrynski
+  - mhyee
+  - hugo
+admin:
+  - oli
+  - jecmejan
+  - skrynski
 root_login:
   - oli
   - peta

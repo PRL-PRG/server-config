@@ -156,6 +156,10 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     in_docker: yes
     in_r: yes
 
+  - username: hugo
+    name: Hugo Musso Gualandi
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIctYGG61aqR6bxpLSSsD1K++hCxmUuPE1vagSdzs8hx Hugo.Gualandi@fit.cvut.cz"
+
   # temporary users
 
   - username: smml1996

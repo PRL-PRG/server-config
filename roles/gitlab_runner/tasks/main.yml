@@ -6,6 +6,7 @@
 - apt_key:
     url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
     state: present
+  tags: apt-key
 - apt:
     update_cache: yes
     name: gitlab-runner
