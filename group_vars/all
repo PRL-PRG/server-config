@@ -34,7 +34,7 @@ all_users:
   - username: jan
     uid: 1003
     name: Jan Vitek
-    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaLPK+wO6G3wOLQkJZthRlKM6sI+39XeR2eh6vf0yJJIbeadfU4gxdBq1hhNmLblydKpl/N7T1kCPmDFziC+FODU4nxeBVYIL9HISLFYG9a18URyPCB6mSg4A8/erHFs+UL9OmDYpj1azOnEmsS9bkcLjCB0IIIax3bBmKe1Ryrg7yBu5QJvZ9g4Jvm2j5B1WLiFhMqvgwAH/lNgKQ26ZGr4Fdn7P2tmN5TRzsYJ/ISCbciKGIfvjCHBh9Gk11xvjHXTGbZ8CzrfBLCM3N3xhWCCv0B/tMZmYsp3qmCZx8XYj/L0dgEwiR4ySez5uftArTimsN801ww8o8Pcj5sTKh janvite@yahoo.com"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMnXdrRaKPyGVcdBOBeItAZ2FDVwZQl5zvsV17Ocqg0/+4cMWIZ8SFfXAeJqCkkLFusQ/M53sod6Ye0o9LDh2itrWaUM5SYDVNp72YwhdG9m2La7eL685epXUZj1gwZ96F4nYjr48tZyD2D0dhBejm4UbQMgg+hwiR57xw+GKOgsFcdXqv9VES0q5MTuJXrdSlU0Nc6VRx6QsF8FcJTG317mTwiBq3z9QJoBJNxv0XjrEFezMzFvdTmvnFipFR//3w0Oxnl5vtKUO2iQNaeLT/vloJZKre21/hGaMYOFFEzdEVslojVngPEwW5cLAYtSJdvYT5Sq4a+IR9L4fAqy/WiKJmYVn6ocfLxtZkaibcwIOwGzq/1qSgwSAVuGNsKWxX+3pz7qIIEFeq2xL3Y9hNcpy4tveA+rglUfXgv51w1YsqiJpVvFzp143Pi7sqVjJD/4bj+hI8YFkOX5Mt4wkWwOD1zOlDhTe28YrZP1ezxy6ZkIjayQ6Hs6WoRXkd4Ks= janvitek@jans-MBPLW.local"
     shell: /bin/bash
     in_docker: yes
     in_scala: yes
