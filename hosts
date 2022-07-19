@@ -2,7 +2,7 @@
 prl-gateway               ansible_host=10.38.5.81
 prl-web                   ansible_host=10.38.5.129
 # warning, this IP is not stable. once the host reboots you have to search it with nmap
-rir-benchmarks            ansible_host=10.200.14.202
+rir-benchmarks            ansible_host=10.200.14.203
 rir-benchmarks-web        ansible_host=10.38.5.94
 rir-gitlab-runner         ansible_host=10.38.5.93
 rir-gitlab-runner-2       ansible_host=10.38.5.127
