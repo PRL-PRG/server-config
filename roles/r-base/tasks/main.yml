@@ -1,6 +1,3 @@
-- apt_repository:
-    repo: ppa:marutter/rrutter3.5
-
 - name: install R native dependencies
   apt:
     update_cache: yes
@@ -12,7 +9,7 @@
       - libjpeg-dev
       - libtiff5-dev
       - procps
-      - libmariadb-client-lgpl-dev
+      - libmariadb-dev
       - libxml2-dev
       - zlib1g-dev
       - libbz2-dev

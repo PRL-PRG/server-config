@@ -40,15 +40,3 @@
   shell: /tmp/install-gnu-parallel.sh
   args:
     creates: /usr/local/bin/parallel
-
-- name: install ripgrep
-  apt:
-    deb: "https://github.com/BurntSushi/ripgrep/releases/download/12.1.0/ripgrep_12.1.0_amd64.deb"
-
-- name: install fd
-  apt:
-    deb: "https://github.com/sharkdp/fd/releases/download/v8.0.0/fd_8.0.0_amd64.deb"
-
-- name: install fzf
-  apt:
-    deb: "http://cz.archive.ubuntu.com/ubuntu/pool/universe/f/fzf/fzf_0.18.0-2_amd64.deb"

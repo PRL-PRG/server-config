@@ -1,8 +1,12 @@
 users:
-  - aviral
-  - kondziu
   - krikava
   - pdonatbo
+
 admin:
-  - aviral
   - krikava
+  - pdonatbo
+
+host_packages:
+  - fd-find
+  - fzf
+  - ripgrep

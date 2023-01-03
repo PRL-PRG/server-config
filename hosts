@@ -13,15 +13,16 @@ dejavuii-test             ansible_host=10.38.5.64
 prl-dejavuii              ansible_host=10.38.5.108
 bigcode-gpu02             ansible_host=10.200.14.143
 prl5                      ansible_host=10.200.14.25
-prl3                      ansible_host=10.200.14.53
-prl4                      ansible_host=10.200.14.54
+prl2                      ansible_host=10.38.5.3
 prl-parasite              ansible_host=10.38.6.134
 prl-aviral                ansible_host=10.38.6.133
 prl-hyeyoung              ansible_host=10.38.6.195
 prl-gpu                   ansible_host=10.38.6.6
 
-# these are disabled yet until all their configuration is done
-prl2                      ansible_host=10.200.14.52
+# disabled for now
+#prl3                      ansible_host=10.200.14.53
+#prl4                      ansible_host=10.200.14.54
+
 # these will be destroyed once we move to the new infrastructure fully
 prl1e                     ansible_host=10.200.14.124
 
@@ -35,17 +36,17 @@ prl1e
 prl-dcd
 
 [metal]
-prl3
-prl4
+#prl3
+#prl4
 prl5
 
 [r]
 prl2
-prl3
-prl4
+#prl3
+#prl4
 
 [scala]
-prl4
+#prl4
 
 [rvm]
 rir-benchmarks-web
@@ -66,7 +67,7 @@ prl5
 rir-benchmarks-web
 prl1e
 prl2
-prl3
-prl4
+#prl3
+#prl4
 prl-dejavuii
 prl-dcd

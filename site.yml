@@ -23,7 +23,6 @@
 - hosts: r
   remote_user: root
   roles:
-    - emacs
     - docker
     - r-base
     - r
@@ -31,10 +30,14 @@
 - hosts: scala
   remote_user: root
   roles:
-    - emacs
     - docker
     - r-base
     - scala
+
+- hosts: prl2
+  remote_user: root
+  roles:
+    - neovim
 
 #- hosts: communications
 #  remote_user: root

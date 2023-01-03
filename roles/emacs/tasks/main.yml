@@ -1,9 +1,0 @@
----
-
-- name: Add emacs PPA repository
-  apt_repository:
-    repo: ppa:kelleyk/emacs
-
-- name: Install emacs
-  apt:
-    name: emacs26-nox
