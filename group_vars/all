@@ -17,7 +17,7 @@ all_users:
   - username: krikava
     uid: 1001
     name: Filip Krikava
-    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzwdcb4rxcvRppWy3FoGhmuaaMdYyP82bBsQJaDy5Yet1YnuD7j+SwGvovx4aJvjWtF/zY/IxmXT5CIjaNq28P47Ul2yYkLd2MZHO8CuxybakCaJ2B/1wliVuHBJQd5tV+pDUyDbW4gQEk/CI1PN0EJVrq2xfnvon6hLRNxBLG/IsljsBp+Ezuh+2QVkQ54jHpH33yKbEB13wiOEFvHEDRwnPvb1vIv1Hp2Q7r0J+uJi7GmW30sCrzRB8VOgHl1PvPaPzyoFAUFLTsh2OY4S6OjCgMZp5h+cbUiMBZLz/Gex18Wd9JjTpbHxfTwlU+CaABwJdutg1JtnYaUZBeXlI1w== krikava@filip-krikavas-macbook-pro.local"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGbbhykEWVLl1IczZVghdQOvlpwn4YXSUu4MKZkPz3xu7VcOlZaN7Du8wHFBkkngbPL3QGgP5gCIy3epNUTwEWWN/e4IXQF46DaFF7C9WEcog/6IwYmM4Iss4MecF3C0fbCSsUxy/rRx2DMR7TG5MOLeI8uaNR10s/zUpJK1LkrLVKK7HSad9vsC5ljSm770T6D8yu5MTM4SllgQtnvpCcB/8/aDKCfDnOb1KaAkbFb26GO6GDL2ifOM+LTheWIvNXHR5khbdIVOvj4wOB28dJyD0450FBIz1zliYda/UuXNnMSGE2Zsm9rGhy4zNC4JiZQDqLk+D/2PgkNUJWsABl filip.krikava@fit.cvut.cz"
     shell: /bin/zsh
     in_docker: yes
     in_r: yes
