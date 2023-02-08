@@ -13,7 +13,7 @@ dejavuii-test             ansible_host=10.38.5.64
 prl-dejavuii              ansible_host=10.38.5.108
 bigcode-gpu02             ansible_host=10.200.14.143
 prl5                      ansible_host=10.200.14.25
-prl2                      ansible_host=10.38.5.3
+prl1                      ansible_host=10.38.4.4
 prl-parasite              ansible_host=10.38.6.134
 prl-aviral                ansible_host=10.38.6.133
 prl-hyeyoung              ansible_host=10.38.6.195
@@ -66,7 +66,7 @@ prl5
 [docker]
 rir-benchmarks-web
 prl1e
-prl2
+prl1
 #prl3
 #prl4
 prl-dejavuii
