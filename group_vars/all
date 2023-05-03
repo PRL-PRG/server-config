@@ -218,6 +218,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
   - username: yorshula
     name: Uladzislau Yorsh
     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDSMhT8PA5VLOEeeA7+P81JbTkTkrodM3w1Cs6+0jJy1Lv8cr+SFE1Drsbf/uCXYqqP+FUXaljrAVC2Xv6rAowsQOznlQO0xCZyNHFCXX0BlQZ7M/aIi/geoVqQGX/37T5Aqfp3oSLKk36zFwU/9SWBIt+34QmMT/jfMDhNHoFmD2DRXqAXsE7TAJ7wcwOc4mr2ycloVgt2P5zj4Nl74LRIZudEKmK2APaKzAdAmwM7BvXMCYcZUYcjNDlNWvkvlmV6kQC9jL7JDFeZd00+tvXy01HCfR8J5Bmn2I+ZiSfkN+fdS2AYxbV+pP4pzR4H5B565TskKxMRUavJWjv6aXSBvN4XBBQEcCuqfe5lhsZWhwA3VFJnIphHuhGwRTmZXaDseLdRJHVfNY14RYVXdhJ8cKj0uMCg5RqpPU9SLiYEREHVBP/M3pxtg+FoocAsiaq3A8xpOYwQM21870AHas0QQb7Ztnj8QKY8kPI+r+7Ux1XfwCuC/rruKhH2IrWA6tE= vladislav@vladislav-notebook"
+    
+  - username: meeteshmehta
+    name: Meetesh Mehta
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzE3VgGWntOCs8ZiUqrDb0gz6oXcXeVo7Btino+D0VSOJO/BlaMdpGiwoztuTiTT+KZ+dEOPrrxl/WPD9/LiXo4J9ftR44JLrDmXlGrFIV8BTyrKvevTDAf4zZ6/nI8HtROwIwBjTlj0wQnUCQmkT+QtVTbVvShu6wYMeXd61AOFtdDIdPjPnVAcrfdwFZlxcFcclvFtvxelpMu23lSUNMkeVYfWURjuLJkZVNBtrBfEq6NFka35hY7YjU6oi6zfHTSpIM6BCc4R89Gthjs/5OEoR61nng2eE/LQMNQKKJcDCPLpuS7aEhLC0vZqAJta7PRaOgsvZMoUbQJ68lTtAZMgXpvRfn0SKJAJrDT92ncokal3m9RxQAgacZtanWTieIbwNBE/BvliPE1I4x7lSQlSc0O19rTfR8yLh20PfBa0LXl7uyySCJ9TtcR8n/i+8QJB73kit8IFLgxxPZk52oMg8WdJi90RG0cXCY8z1TOKdv05i9qxT2PFfHE+YBqZc= mee@DESKTOP-UQTL8V1"
+    
 
   # no longer active -- these users are kept here so that the scripts remove them from servers
 

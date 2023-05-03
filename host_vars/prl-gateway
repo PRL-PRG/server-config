@@ -26,6 +26,7 @@ users:
   - smml1996
   - jan
   - jecmejan
+  - meeteshmehta
   
 remove_invalid_users: true
 
