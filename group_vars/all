@@ -223,6 +223,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     name: Meetesh Mehta
     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzE3VgGWntOCs8ZiUqrDb0gz6oXcXeVo7Btino+D0VSOJO/BlaMdpGiwoztuTiTT+KZ+dEOPrrxl/WPD9/LiXo4J9ftR44JLrDmXlGrFIV8BTyrKvevTDAf4zZ6/nI8HtROwIwBjTlj0wQnUCQmkT+QtVTbVvShu6wYMeXd61AOFtdDIdPjPnVAcrfdwFZlxcFcclvFtvxelpMu23lSUNMkeVYfWURjuLJkZVNBtrBfEq6NFka35hY7YjU6oi6zfHTSpIM6BCc4R89Gthjs/5OEoR61nng2eE/LQMNQKKJcDCPLpuS7aEhLC0vZqAJta7PRaOgsvZMoUbQJ68lTtAZMgXpvRfn0SKJAJrDT92ncokal3m9RxQAgacZtanWTieIbwNBE/BvliPE1I4x7lSQlSc0O19rTfR8yLh20PfBa0LXl7uyySCJ9TtcR8n/i+8QJB73kit8IFLgxxPZk52oMg8WdJi90RG0cXCY8z1TOKdv05i9qxT2PFfHE+YBqZc= mee@DESKTOP-UQTL8V1"
     
+  - username: edgarogh
+    name: Edgar Onghena
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzozZSBD3UAxH6CdIjEx0CjIfWjAvpi6tvRM/kjyciJ/Wcvz/NouuGXeSFGnFVzkJ9PYeRCKDmC49Im+7A3orERNhawyvq1yg+aw3w707tExtlK6cuXzrGb7t/4RqFc+jpqlf7v0fqu+shpVgmKpscAgjTq3kBS7fNLrRt+sw6z+V9Mvpv8c3vQ94QCUD/hNmc8uueiHPV74t0zloqotuYBr5OWYRW2Kt0iQF+dS0PoJzZOKKF3+PJrq5TM+kXtJ+p9JIFuD3d7BCx83YR77UR7gHmpvnP6mLpQib78WCfxpTiIigUPTKfAHjbceY/oPPzclLhTR16wQ9gSaGHGpuB edgar@mint-GE70-2OC-2OE"
 
   # no longer active -- these users are kept here so that the scripts remove them from servers
 

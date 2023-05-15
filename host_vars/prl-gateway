@@ -27,6 +27,7 @@ users:
   - jan
   - jecmejan
   - meeteshmehta
+  - edgarogh
   
 remove_invalid_users: true
 
