@@ -5,10 +5,12 @@ users:
   - hugo
   - meeteshmehta
   - edgarogh
+  - krikava
 admin:
   - oli
   - jecmejan
   - skrynski
+  - krikava
 root_login:
   - oli
   - peta
