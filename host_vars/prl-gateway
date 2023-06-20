@@ -28,6 +28,7 @@ users:
   - jecmejan
   - meeteshmehta
   - edgarogh
+  - janvitek
   
 remove_invalid_users: true
 

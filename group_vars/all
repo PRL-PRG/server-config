@@ -227,6 +227,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     name: Edgar Onghena
     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzozZSBD3UAxH6CdIjEx0CjIfWjAvpi6tvRM/kjyciJ/Wcvz/NouuGXeSFGnFVzkJ9PYeRCKDmC49Im+7A3orERNhawyvq1yg+aw3w707tExtlK6cuXzrGb7t/4RqFc+jpqlf7v0fqu+shpVgmKpscAgjTq3kBS7fNLrRt+sw6z+V9Mvpv8c3vQ94QCUD/hNmc8uueiHPV74t0zloqotuYBr5OWYRW2Kt0iQF+dS0PoJzZOKKF3+PJrq5TM+kXtJ+p9JIFuD3d7BCx83YR77UR7gHmpvnP6mLpQib78WCfxpTiIigUPTKfAHjbceY/oPPzclLhTR16wQ9gSaGHGpuB edgar@mint-GE70-2OC-2OE"
 
+  - username: janvitek
+    name: Jan Vitek
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAF0Agh4FaVYr8JPKSO/92PXZDqJ7SBlzvcfHfySqQqN vitekj@me.com"
+
+
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
   - username: hshabbir
