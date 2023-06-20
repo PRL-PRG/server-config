@@ -10,3 +10,4 @@ host_packages:
   - fd-find
   - fzf
   - ripgrep
+  - bear
