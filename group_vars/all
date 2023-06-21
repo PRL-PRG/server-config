@@ -15,7 +15,6 @@ group_packages:
 all_users:
 
   - username: krikava
-    uid: 1001
     name: Filip Krikava
     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGbbhykEWVLl1IczZVghdQOvlpwn4YXSUu4MKZkPz3xu7VcOlZaN7Du8wHFBkkngbPL3QGgP5gCIy3epNUTwEWWN/e4IXQF46DaFF7C9WEcog/6IwYmM4Iss4MecF3C0fbCSsUxy/rRx2DMR7TG5MOLeI8uaNR10s/zUpJK1LkrLVKK7HSad9vsC5ljSm770T6D8yu5MTM4SllgQtnvpCcB/8/aDKCfDnOb1KaAkbFb26GO6GDL2ifOM+LTheWIvNXHR5khbdIVOvj4wOB28dJyD0450FBIz1zliYda/UuXNnMSGE2Zsm9rGhy4zNC4JiZQDqLk+D/2PgkNUJWsABl filip.krikava@fit.cvut.cz"
     shell: /bin/zsh
