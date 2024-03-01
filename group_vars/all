@@ -232,6 +232,10 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     name: Jan Vitek
     ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAF0Agh4FaVYr8JPKSO/92PXZDqJ7SBlzvcfHfySqQqN vitekj@me.com"
 
+  - username: hrncikar
+    name: Karolina Hrncirova
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEyNcDWP/ZlnzVDLH0HK1Aab5HQ52rrvsS+bDO71TbViU3zkn0wMrDSb8J5FkoCtWl4NaONGz2K0QN/U0AHqQczyaqioqTNGd/2WCJsGdFQBDgcjSGqO/9+w1pM+RbOA84PfsbA8wD2SdYfqxKEieIFm2lxMmku0lz5KVt5UNMssg4tEzlNPXG32dIIB09YivL9166W49djlGMoVzH9eaX5xMEohbmdNjWzlZWoEbn9oI80a+yF6Tf8L8Oo3mZdDSrgiHLMsAg834CE96/DSEosKWdhlRHkQdS+38PhT3g7Pjqjyxke15n+TwOQquH/H856km/RY4y0APdHYqlGpIrne3JoiLR5e27pNNbeJ0bueRWx2kdOOwtlyVBVsfgPWRYGy6++dGt/qyGWF+A1luwJChYOsAuiiuhYF8ptEDQ2b1RnJwb/4eGNHXwzEvWM28IglGg4r3znk6Mp3Ojn/FAyiNpt3NGgR6dYcs+CKyp/O4fgMWttPXUnprMuqu/iB0= linahrncirikova@e-76-231.eduroam.fit.cvut.cz"
+
 
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
