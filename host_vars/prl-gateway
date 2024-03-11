@@ -29,6 +29,8 @@ users:
   - meeteshmehta
   - edgarogh
   - janvitek
-  
+  - hrncikar
+  - stepam38
+
 remove_invalid_users: true
 
