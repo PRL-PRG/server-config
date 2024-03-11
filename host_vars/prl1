@@ -12,3 +12,5 @@ host_packages:
   - fzf
   - ripgrep
   - bear
+
+remove_invalid_users: true
