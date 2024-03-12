@@ -1,5 +1,5 @@
 [all]
-prl-gateway               ansible_host=10.38.5.81
+prl-gateway               ansible_host=prl-gateway.prl.fit.cvut.cz
 prl-web                   ansible_host=10.38.5.129
 # warning, this IP is not stable. once the host reboots you have to search it with nmap
 rir-benchmarks            ansible_host=10.200.14.202
