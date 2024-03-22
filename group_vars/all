@@ -240,6 +240,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     name: Michal Stepanek
     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz7xq8eRklGPJHpF+j4bTOkWoGApa57EtGck1aJ0qIv3s/SEPessEFvBlcESTNGZNC45Amsh+qH3pZ4dzqu5VebEkPFecVcU1OKldGEwAqsWrMZrqXZVGXJSsK/FFzH5O3deoYvvnytzSxQUT1nIaNcDw2F0Jg6LdpFjRKOsoEYRXBymc6YWq82rNwhl2oUOg7PsWNrDWd5bnobDif5fKs/TPvcUEbsYbktpAfKLZujpFN1EtwSo+DDqmIYcvqjrhv1OcHJm4CfO9VYYdvDbhn8xjv9zgrlVQFIX3D7PdjGYyQRGevneXJTJ1D7uAatcbrBhfwzRHs1BDBaR4obySqlOgUSQWgeXTUU93vICJnpl1u4nvEQ2S6maUDsyb5IZK3YbeivK1tUnQMRIsd5C3b+WWZX8FiYOnavF/MeoeqSbczBxQSSbFNTVhBeWcAesS+M8+BjYmdHkl/RWoNZ7djSFmLMzgda8qXv6Y9l8MAx53nX7ijPsEZmv+4yCdO4J9shp7R+2IMYq87yFhp78HvF4P0MaNpOyJAuqGDviJReo0ju6hlcDsh94CCwZIvyNjeC6FodhTA+fgzwusS16QubfT7t6/4qn8baPtesQibvUQb2Z01ExBxlWWupWZa4EZxpAC64thfh6ExOw6Rx5Mt8X8gxFT8Hwx7sj+B5PYVHw== michal@Ubuntu-22"
 
+  - username: nickbreitling
+    name: Nick Breitling
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEYXIDfIAKQJMClujBl0o2ZM1MkMx4Mt5y4HE+dTL2v1 breitling.nw@gmail.com"
+
+
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
   - username: hshabbir
