@@ -248,6 +248,12 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     in_r: yes
     in_scala: yes
 
+  - username: adamep
+    name: Petr Adamek
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQlxVhH7ag4NtOgrjHwRHpEe/dsJGarIdc83qMfC/PePLuPOp4vd+6DSLmPcMX2YOWoqXoAhkvN/w3oSB73zLqrNPWWSjyAayD3eSs4B0/nwtkr4W5OagFJS0W29lXpK9hV3eBdOIH4rQWsEstUSBNtBVE6grcmKeZQ3kqUH5OniCMhc6/Vn4+44Dx+Vt2ziZqscqYTlvQLaGmbNLE4RwPxm+SwaLShzoTEOe5Rs7eq2QSjKQjYHTBPQGE1FUlPK1T2t2iWC3cCG/NdLKYxvL+3ilUeVUj/ZPFT9zpEXyuM/wieOy8wTyG8tgP16rsQN+YmAGLvkVP7plrlw79kUGDtTmYfW4tOkQjb23oo1ZIB9+QDY1wudWD/VKUhVp6Fh7D7jCcm1Ta+qM/BOOF63PnIGYg2vlUXRjqExnaofkn+ltjbmSEXNJtSQgudOzJMORV84PpQpNX4Wy9XMI4z7X9fYX4amT2R+EdHxIV7GdHXaHZPPSamUgkDkCyEd4NZs8= adamep@Silmarilis"
+    shell: /bin/bash
+    in_docker: yes
+
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
   - username: hshabbir
