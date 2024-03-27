@@ -240,6 +240,14 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     name: Michal Stepanek
     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz7xq8eRklGPJHpF+j4bTOkWoGApa57EtGck1aJ0qIv3s/SEPessEFvBlcESTNGZNC45Amsh+qH3pZ4dzqu5VebEkPFecVcU1OKldGEwAqsWrMZrqXZVGXJSsK/FFzH5O3deoYvvnytzSxQUT1nIaNcDw2F0Jg6LdpFjRKOsoEYRXBymc6YWq82rNwhl2oUOg7PsWNrDWd5bnobDif5fKs/TPvcUEbsYbktpAfKLZujpFN1EtwSo+DDqmIYcvqjrhv1OcHJm4CfO9VYYdvDbhn8xjv9zgrlVQFIX3D7PdjGYyQRGevneXJTJ1D7uAatcbrBhfwzRHs1BDBaR4obySqlOgUSQWgeXTUU93vICJnpl1u4nvEQ2S6maUDsyb5IZK3YbeivK1tUnQMRIsd5C3b+WWZX8FiYOnavF/MeoeqSbczBxQSSbFNTVhBeWcAesS+M8+BjYmdHkl/RWoNZ7djSFmLMzgda8qXv6Y9l8MAx53nX7ijPsEZmv+4yCdO4J9shp7R+2IMYq87yFhp78HvF4P0MaNpOyJAuqGDviJReo0ju6hlcDsh94CCwZIvyNjeC6FodhTA+fgzwusS16QubfT7t6/4qn8baPtesQibvUQb2Z01ExBxlWWupWZa4EZxpAC64thfh6ExOw6Rx5Mt8X8gxFT8Hwx7sj+B5PYVHw== michal@Ubuntu-22"
 
+  - username: rihafilip
+    name: Filip Riha
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCNrl9hu5q+DhaPzFbWfrKd6EUaswPjIk57sndym91VwZjcs9UZIGCmdlUKxvobEAJOs7Rsr24h1T1Hdl//poMZTeXUvKSj3sGunfkcDNV+DdsWZpaG1I3deuuEILjJSSf4vrk9Etn+3ckrT3qDe2ATXYyY82JOjbM13eiDGRG4q2gsWfgXBpdbwTiZ+ebxxoYR3ibRUZoSmMsvLrWl/Io6xOZmqyGYdgbHTfErsc7NWrZByMBSeQ0DG1vheQIoxaUz4lWFbTEuUEe+RjyUEGxOlKBT8z71sleLnztskipFGXeCK+ChAxManDAhRcQqTJYV+MFmVJybZLreiJYaVUJAaQs+AkT2O2lIFnmKvcpZw9uolNbvRY6IJ0wib9OLRXMaN6CJFHF9mIZk5SL4kL66TeNOVvHmPFbB+cGC3uxH7FsioVWBK1oFNe8orY5hMRagq23mWTrSqg5cLbuSi83H7nuAlli5tegXz0J5TqE1zYigyIBC3TJfgMd8Fg9DJ+s= rihafili@fit.cvut.cz"
+    shell: /bin/bash
+    in_docker: yes
+    in_r: yes
+    in_scala: yes
+
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
   - username: hshabbir
