@@ -31,6 +31,7 @@ users:
   - janvitek
   - hrncikar
   - stepam38
+  - nickbreitling
 
 remove_invalid_users: true
 

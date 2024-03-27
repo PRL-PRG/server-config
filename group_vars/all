@@ -254,6 +254,10 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     shell: /bin/bash
     in_docker: yes
 
+  - username: nickbreitling
+    name: Nick Breitling
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEYXIDfIAKQJMClujBl0o2ZM1MkMx4Mt5y4HE+dTL2v1 breitling.nw@gmail.com"
+
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
   - username: hshabbir
