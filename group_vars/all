@@ -38,6 +38,13 @@ all_users:
     in_docker: yes
     in_scala: yes
 
+  - username: petrstastny
+    name: Petr Statny
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKles5Kplu8lHUehjmkhchYDSI9hRRP9E8Iuw2UatgFi5wd1ECUp7QlN9sr7I1jXHqwaURUyCYDzhc9TrqgsG+/fGBiK9yxiSUvRQ7NErG0c7pk1a0xBoCtOXeJy+rDfxZVM2H8TgWjOZQgKWP144UEFiK2OJoRQX7h/7whAUoD+tt1SZ7cWTyU7mnhqtB9/dkCbu3g5zHWJjdaWDqhdVkpFb1jzlHkggJx9jvm4623DYuNKykUXkdgIxD/1NaMZcad/bfFmIFs6XoDZxd1OoaVKp9e5jDso6ZjFxOTP3jbHs2wDdbkDyqqypIuGyKYNM9iC6vVoiSqNnKr/ckTfljLqt5fbklRMRFSYK+w6BDCf8+1ylWZxQDcEA5lXIdmIGes0IKPswIrEF04t0G7gY975sILtfPaGXzpm5BocKCX4aVzTIhuMrnw7ofxPYY1vWzExJdEIRiwswGdB+gsEwo+odTK6qrJCN7NSbqaT9wp9ZCKSkvQG1silVQIyy+QWk= petrstastny@Petrs-MacBook-Pro.local"
+    shell: /bin/zsh
+    in_docker: yes
+    in_r: yes
+
   - username: kondziu
     name: Konrad Siek
     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDf930xfeiq/YsVNyuQeXA8TRlccffEpNlYAWmjPErvajHphpJVl5nFGyMRDxUhyayo9IWEyfmMSiWkiM8qZQdrxqfax3cNA3W6QzhBGKOh3GLGr67EhvUSY5hdkUs7L7u6tmeF8iJIM2OGbBfhJJY5h4OvSo+XUkFlk1XwAkpgyszJpSD6TgCWgpTIiCJOHJDEhOoNKsnYH1xIRw2V4HRzFl7QpCfiiBxT0SbplgL9irhcz/+uWdAdjN1q6mBMnkg/eRcKmMbErpif8dbRrDfkVN5R4rzXV26wL/ZF+Y2RKf2iZnqqeoEztr32zrVIl0BSU8Ywwo7c7YGdalas2XlFBaxsgo/cSoT9iJtPIP8bx1AOoLjAvD8lyXb3lhqjsexY8LW58/+eYmCx9AYOdiTvupmProcqdxmdmUoDOedOAlZRkxkouil0BXDj6IZqU8GbgdjkiuY9WYesau/k6032Yk4owfsKbUfO0H4C/Enuitr82MrnnMkQAuKqyrbq/gRZWDeH4Ug/tn0ZHBN/zLvMsQgJ7GM78eBCSam5bN3VkKMi+qa11I4IMHhR0bzKMuwb1glgUxsfvBS4C0D4IvYGbXOllP5VS1JZHJFuaWF1/KfWt+y7VSDwG3U+3LgtwCZZqZ2DVzJ474mAa9F5HelKh07syHzx1HbfyqTKExlG0Q== siekkonr@fit.cvut.cz"
@@ -93,6 +100,7 @@ all_users:
     shell: /bin/bash
     in_docker: yes
     in_r: yes
+    
 
   - username: aviral
 #    uid: 1729
