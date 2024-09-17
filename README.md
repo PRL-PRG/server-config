@@ -21,12 +21,16 @@ Servers `prl2`-`prl5` are physical-ish machines. They must be managed by ansible
 ## Connecting to the machines
 
 Note that our servers do not allow passwords. You must use your `ssh` keys to get in.
-
 All our machines are visible from desktops in our rooms. If you need to connect from other locations, you have two options:
 
 ### Faculty VPN
 
-To connect to the new VPN, visit the updated FIT guide available in [czech](https://vpn.fit.cvut.cz) and [english](https://vpn.fit.cvut.cz/index.en.html). Note that this option is available to students, teachers and employees of CTU *only*. If available to you, please use the VPN for connections.  
+To connect to the new VPN, visit the updated FIT guide available in [czech](https://vpn.fit.cvut.cz) and [english](https://vpn.fit.cvut.cz/index.en.html). Note that this option is available to students, teachers and employees of CTU *only*. If available to you, please use the VPN for connections.
+
+Once you are in the local network, you can connect to the server by IP.
+You can find the server IPs in the ansible `hosts` file in this repository.
+To connect via a name (e.g. `ssh prl5`), add an entry to your `/etc/hosts` file.
+Keep in mind that the syntax for `/etc/hosts` is different from the syntax of the ansible hosts file.
 
 ### Public Gateway
 
