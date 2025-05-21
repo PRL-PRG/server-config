@@ -266,6 +266,14 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
     name: Nick Breitling
     ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEYXIDfIAKQJMClujBl0o2ZM1MkMx4Mt5y4HE+dTL2v1 breitling.nw@gmail.com"
 
+  - username: vinho
+    name: Vincent Holliday
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILpwOdVpVeBvEh9wlQNfBbmgGy2hrLVsnUUDVwgjk0bG vholuni@gmail.com"
+
+  - username: anastasija
+    name: Anastasija Skotorenko
+    ssh-key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINO7rbsMPTiRN/Z96+cBnnAuMHNvg/0zoj22lqnwfjrJ lioness.a.skt@gmail.com"
+
   # no longer active -- these users are kept here so that the scripts remove them from servers
 
   - username: hshabbir
@@ -273,4 +281,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCs1LBR/VmK0E7al+96JemMwKLUeNZaVEu3P/HIfDrM
 
   - username: jcallaghan
     name: Joseph Callaghan
+
+
 
